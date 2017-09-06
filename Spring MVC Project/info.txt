@@ -1,0 +1,2 @@
+This project implements the widely used concept of enterprise application development framework,
+the Model View Controller(MVC) using Spring. 
