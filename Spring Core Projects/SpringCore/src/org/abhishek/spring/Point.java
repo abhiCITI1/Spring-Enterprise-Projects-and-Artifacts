@@ -1,5 +1,8 @@
 package org.abhishek.spring;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Point {
 	
 	private int x;

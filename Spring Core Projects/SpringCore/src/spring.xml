@@ -1,46 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
-<beans>
-	<!-- 
-	
-	<bean id="triangle" class="org.abhishek.spring.Triangle">
-		<property name="pointA" ref="pointZero"></property>
-		<property name="pointB">
-			<bean id="pointOne" class="org.abhishek.spring.Point">
-				<property name="x" value="-20"></property>
-				<property name="y" value="0"></property>
-			</bean>
-		</property>
-		<property name="pointC">
-			<bean id="pointTwo" class="org.abhishek.spring.Point">
-				<property name="x" value="0"></property>
-				<property name="y" value="20"></property>
-			</bean>
-		</property>
+
+
+
+
+	<bean id="triangle" class="org.abhishek.spring.Triangle" autowire="byName">
+
 	</bean>
-	
-	<bean id="pointZero" class="org.abhishek.spring.Point">
-		<property name="x" value="0"></property>
-		<property name="y" value="0"></property>
-	</bean>
-	
-	<alias name="triangle" alias="triangle-alias"/>
-	
-	 -->
-	
-	<bean id="triangle" class="org.abhishek.spring.Triangle">
-		<property name="points">
-			<list>
-				<ref bean="pointA"/>
-				<ref bean="pointB"/>
-				<ref bean="pointC"/>
-			</list>
-		</property>
-	
-	
-	</bean>
-	
+
+	<alias name="triangle" alias="triangle-alias" />
+
+
+	<!-- <bean id="triangle" class="org.abhishek.spring.Triangle"> <property 
+		name="points"> <list> <ref bean="pointA"/> <ref bean="pointB"/> <ref bean="pointC"/> 
+		</list> </property> </bean> -->
 	<bean id="pointA" class="org.abhishek.spring.Point">
 		<property name="x" value="-20"></property>
 		<property name="y" value="0"></property>

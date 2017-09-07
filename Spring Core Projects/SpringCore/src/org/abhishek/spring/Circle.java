@@ -1,5 +1,9 @@
 package org.abhishek.spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Circle implements Shape{
 	
 	private Point centre;
@@ -18,11 +22,11 @@ public class Circle implements Shape{
 	public Point getCentre() {
 		return centre;
 	}
-	
-	/*public void setCentre(Point centre)
+	@Autowired
+	public void setCentre(Point centre)
 	{
 		this.centre=centre;
-	}*/
+	}
 
 
 	public void draw()
