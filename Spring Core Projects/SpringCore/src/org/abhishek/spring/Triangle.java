@@ -4,8 +4,7 @@ import java.util.List;
 
 public class Triangle implements Shape{
 	
-	/*
-	 * private Point pointA;
+	private Point pointA;
 	private Point pointB;
 	private Point pointC;	
 	
@@ -40,9 +39,9 @@ public class Triangle implements Shape{
 		System.out.println("PointB (" + getPointB().getX() + ", "+ getPointB().getY()+")");
 		System.out.println("PointC (" + getPointC().getX() + ", "+ getPointC().getY()+")");
 	}
-	 * */
 	
-	private List<Point> points;
+	
+	/*private List<Point> points;
 
 	public List<Point> getPoints() {
 		return points;
@@ -59,7 +58,7 @@ public class Triangle implements Shape{
 			System.out.println("Point : ("+p.getX() + "," + p.getY() + ")");
 		}
 	}
-	
+	*/
 	
 	
 }
