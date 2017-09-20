@@ -15,23 +15,23 @@ public class ShapeAspects {
 	@Pointcut("execution(public * org.abhishek.springaop.dto.*.get*(..))")
 	public void allGettersPointcuts(){}
 	
-	/*@Pointcut("within(org.abhishek.springaop.dto.Circle)")
-	public void allCircleMethodPointcuts(){}*/
+	@Pointcut("within(org.abhishek.springaop.dto.Circle)")
+	public void allCircleMethodPointcuts(){}
 	
-	/*@Before("allGettersPointcuts()")
+	@Before("allGettersPointcuts()")
 	public void loggingAdvice(JoinPoint jp)
 	{
 		System.out.println("Before advice called at join point "+ jp.toString());
-	}*/
+	}
 	
 	
-	/*@Before("allCircleMethodPointcuts()")
+	@Before("allCircleMethodPointcuts()")
 	public void cachingAdvice(JoinPoint jp)
 	{
 		System.out.println("Caching advice called at join point "+jp.toString() + "" + (Circle)jp.getTarget());
-	}*/
+	}
 	
-	/*@Before("args(name)")
+	@Before("args(name)")
 	public void getArgumentsPassedAdvice(String name){
 		
 		System.out.println("Arguments passed in the set method of shapes "+ name);
@@ -41,7 +41,7 @@ public class ShapeAspects {
 	public void afterReturningAdvice(String name,String returningName)
 	{
 		System.out.println("String arg setter method called with value "+ name + " and value is "+returningName);
-	}*/
+	}
 	
 	@Around("allGettersPointcuts()")
 	public Object checkNameAroundAdvice(ProceedingJoinPoint pjp)
