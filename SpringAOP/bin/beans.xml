@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd ">
+	
+	<!-- <context:annotation-config/> -->
+	
+	<aop:aspectj-autoproxy />
+	
+	
+	
+	
+	<bean id="circle" class="org.abhishek.springaop.dto.Circle">
+		<property name="name" value="Demo Circle"></property>
+	</bean>
+	<bean id="triangle" class="org.abhishek.springaop.dto.Triangle">
+		<property name="name" value="Demo Triangle"></property>
+	</bean>
+	
+	<bean id="shapeService" class="org.abhishek.springaop.service.ShapeService" autowire="byName"></bean>
+	<bean id="shapeAspects" class="org.abhishek.springaop.aspects.ShapeAspects"></bean>
+	
+	
+	
+	
+	<!-- AOP XML Configuration -->
+
+	<!-- <aop:config>
+	
+		<aop:aspect id="shapeAspects" ref="shapeAspects">
+		
+			<aop:pointcut expression="execution(public * org.abhishek.springaop.dto.*.get*(..))" id="allGettersPointcuts"/>
+			<aop:around method="checkNameAroundAdvice()" pointcut="execution(public * org.abhishek.springaop.dto.*.get*(..))"/>
+		
+		</aop:aspect>
+	
+	</aop:config> -->	
+	
+	
+	
+	
+</beans>
